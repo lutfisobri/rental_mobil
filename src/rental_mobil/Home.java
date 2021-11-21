@@ -406,8 +406,7 @@ public class Home extends javax.swing.JFrame {
                 tahun_TextField5.setText(res.getString("tahun_mobil"));
                 harga_TextField6.setText(res.getString("harga_sewa"));
             }
-            String id = res.getString("id_mobil");
-            new Proses(id).setVisible(true);
+            new Proses().setVisible(true);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, "Tidak Terhubung ke Database");
         }
