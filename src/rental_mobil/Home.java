@@ -404,7 +404,6 @@ public class Home extends javax.swing.JFrame {
                 plat_TextField4.setText(res.getString("plat_nomor"));
                 tahun_TextField5.setText(res.getString("tahun_mobil"));
                 harga_TextField6.setText(res.getString("harga_sewa"));
-            res.getString(jComboBox1);
             new Proses().setVisible(true);
             }
             
