@@ -14,7 +14,7 @@ public class Proses extends javax.swing.JFrame {
     /**
      * Creates new form Proses
      */
-    public Proses() {
+    public Proses(String id) {
         initComponents();
         setLocationRelativeTo(null);
         datahome();

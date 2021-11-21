@@ -15,6 +15,7 @@ public class Home extends javax.swing.JFrame {
         datatable();
         combo();
     }
+    
     public void datatable(){
         DefaultTableModel tbl=new DefaultTableModel();
         tbl.addColumn("Id Mobil");
@@ -404,9 +405,9 @@ public class Home extends javax.swing.JFrame {
                 plat_TextField4.setText(res.getString("plat_nomor"));
                 tahun_TextField5.setText(res.getString("tahun_mobil"));
                 harga_TextField6.setText(res.getString("harga_sewa"));
-            new Proses().setVisible(true);
             }
-            
+            String id = res.getString("id_mobil");
+            new Proses(id).setVisible(true);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, "Tidak Terhubung ke Database");
         }
