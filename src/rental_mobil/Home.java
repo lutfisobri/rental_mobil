@@ -42,7 +42,7 @@ public class Home extends javax.swing.JFrame {
                 dataTable1.setModel(tbl);
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, "Tidak Terhubung ke Database");
+            JOptionPane.showMessageDialog(rootPane, "Sedang Maintenance");
         }
     }
     
@@ -65,6 +65,8 @@ public class Home extends javax.swing.JFrame {
         } catch (SQLException e) {
         }
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
