@@ -4,12 +4,16 @@
  * and open the template in the editor.
  */
 package rental_mobil;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JOptionPane;
+import koneksi.konekdb;
 /**
  *
  * @author Fathan
@@ -24,12 +28,34 @@ public class transaksi extends javax.swing.JFrame {
         
         lbl_idmobil.setText(lbl_idmobilString);
         
+        
     }
+//    public String userString() throws SQLException{
+//        try {
+//            setDataMahasiswa(usernameString);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(transaksi.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//    }
 
     transaksi() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
+    private void setDataMahasiswa(String username) throws SQLException {
+        try {
+            String getAllData = "SELECT * FROM akun WHERE akun.username ='" + username + "'";
+            Connection conn = (Connection)konekdb.GetConnection();
+            PreparedStatement pst = conn.prepareStatement(getAllData);
+            ResultSet rs = pst.executeQuery(getAllData);
+            if (rs.next()) {
+                lbl_idpenyewa.setText(username);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -450,7 +476,7 @@ public class transaksi extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel37))
                                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(67, 67, 67))
             .addGroup(jPanel3Layout.createSequentialGroup()
