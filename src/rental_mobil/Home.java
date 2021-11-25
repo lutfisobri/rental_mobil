@@ -89,7 +89,7 @@ public class Home extends javax.swing.JFrame {
         };
         jButton1 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
-        id_TextField1 = new javax.swing.JTextField();
+        txt_idmobil = new javax.swing.JTextField();
         tipe_TextField2 = new javax.swing.JTextField();
         merk_TextField3 = new javax.swing.JTextField();
         plat_TextField4 = new javax.swing.JTextField();
@@ -136,10 +136,10 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        id_TextField1.setEditable(false);
-        id_TextField1.addActionListener(new java.awt.event.ActionListener() {
+        txt_idmobil.setEditable(false);
+        txt_idmobil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                id_TextField1ActionPerformed(evt);
+                txt_idmobilActionPerformed(evt);
             }
         });
 
@@ -249,7 +249,7 @@ public class Home extends javax.swing.JFrame {
                                 .addComponent(jLabel8))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(id_TextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txt_idmobil, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -287,7 +287,7 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(id_TextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_idmobil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -348,7 +348,7 @@ public class Home extends javax.swing.JFrame {
             java.sql.ResultSet res=stm.executeQuery(sql);
             
             while (res.next()) {                
-                id_TextField1.setText(res.getString("id_mobil"));
+                txt_idmobil.setText(res.getString("id_mobil"));
                 tipe_TextField2.setText(res.getString("tipe_mobil"));
                 merk_TextField3.setText(res.getString("merk_mobil"));
                 plat_TextField4.setText(res.getString("plat_nomor"));
@@ -356,14 +356,15 @@ public class Home extends javax.swing.JFrame {
                 harga_TextField6.setText(res.getString("harga_sewa"));
             }
             
+            
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, "Tidak Terhubung ke Database");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void id_TextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_id_TextField1ActionPerformed
+    private void txt_idmobilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_idmobilActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_id_TextField1ActionPerformed
+    }//GEN-LAST:event_txt_idmobilActionPerformed
 
     private void tipe_TextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipe_TextField2ActionPerformed
         // TODO add your handling code here:
@@ -401,17 +402,20 @@ public class Home extends javax.swing.JFrame {
             this.setVisible(false);
             while (res.next()) { 
                 
-                id_TextField1.setText(res.getString("id_mobil"));
+                txt_idmobil.setText(res.getString("id_mobil"));
                 tipe_TextField2.setText(res.getString("tipe_mobil"));
                 merk_TextField3.setText(res.getString("merk_mobil"));
                 plat_TextField4.setText(res.getString("plat_nomor"));
                 tahun_TextField5.setText(res.getString("tahun_mobil"));
                 harga_TextField6.setText(res.getString("harga_sewa"));
             }
-            new login().setVisible(true);
+            transaksi trans = new transaksi(txt_idmobil.getText());
+            trans.setVisible(true);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, "Tidak Terhubung ke Database");
         }
+        transaksi trans = new transaksi(txt_idmobil.getText());
+            new transaksi().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -452,7 +456,6 @@ public class Home extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable dataTable1;
     private javax.swing.JTextField harga_TextField6;
-    private javax.swing.JTextField id_TextField1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -476,5 +479,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.ButtonGroup supir;
     private javax.swing.JTextField tahun_TextField5;
     private javax.swing.JTextField tipe_TextField2;
+    private javax.swing.JTextField txt_idmobil;
     // End of variables declaration//GEN-END:variables
 }
