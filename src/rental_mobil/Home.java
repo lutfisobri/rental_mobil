@@ -90,14 +90,14 @@ public class Home extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
         txt_idmobil = new javax.swing.JTextField();
-        tipe_TextField2 = new javax.swing.JTextField();
-        merk_TextField3 = new javax.swing.JTextField();
-        plat_TextField4 = new javax.swing.JTextField();
-        tahun_TextField5 = new javax.swing.JTextField();
-        harga_TextField6 = new javax.swing.JTextField();
+        txt_tipe = new javax.swing.JTextField();
+        txt_merk = new javax.swing.JTextField();
+        txt_plat = new javax.swing.JTextField();
+        txt_tahun = new javax.swing.JTextField();
+        txt_harga = new javax.swing.JTextField();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        jaminanan = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -143,38 +143,38 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        tipe_TextField2.setEditable(false);
-        tipe_TextField2.addActionListener(new java.awt.event.ActionListener() {
+        txt_tipe.setEditable(false);
+        txt_tipe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tipe_TextField2ActionPerformed(evt);
+                txt_tipeActionPerformed(evt);
             }
         });
 
-        merk_TextField3.setEditable(false);
-        merk_TextField3.addActionListener(new java.awt.event.ActionListener() {
+        txt_merk.setEditable(false);
+        txt_merk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                merk_TextField3ActionPerformed(evt);
+                txt_merkActionPerformed(evt);
             }
         });
 
-        plat_TextField4.setEditable(false);
-        plat_TextField4.addActionListener(new java.awt.event.ActionListener() {
+        txt_plat.setEditable(false);
+        txt_plat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                plat_TextField4ActionPerformed(evt);
+                txt_platActionPerformed(evt);
             }
         });
 
-        tahun_TextField5.setEditable(false);
-        tahun_TextField5.addActionListener(new java.awt.event.ActionListener() {
+        txt_tahun.setEditable(false);
+        txt_tahun.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tahun_TextField5ActionPerformed(evt);
+                txt_tahunActionPerformed(evt);
             }
         });
 
-        harga_TextField6.setEditable(false);
-        harga_TextField6.addActionListener(new java.awt.event.ActionListener() {
+        txt_harga.setEditable(false);
+        txt_harga.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                harga_TextField6ActionPerformed(evt);
+                txt_hargaActionPerformed(evt);
             }
         });
 
@@ -189,7 +189,7 @@ public class Home extends javax.swing.JFrame {
         supir.add(jRadioButton2);
         jRadioButton2.setText("Tidak");
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BPKB", "IJAZAH SMA/SMK", "Sertifikat Rumah" }));
+        jaminanan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BPKB", "IJAZAH SMA/SMK", "Sertifikat Rumah" }));
 
         jButton2.setText("LANJUT");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -253,17 +253,17 @@ public class Home extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(merk_TextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(plat_TextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(tahun_TextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(tipe_TextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txt_merk, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txt_plat, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txt_tahun, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txt_tipe, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jaminanan, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(13, 13, 13)
                                                 .addComponent(jRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(harga_TextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                            .addComponent(txt_harga, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -291,23 +291,23 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tipe_TextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_tipe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(merk_TextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_merk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(plat_TextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_plat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tahun_TextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_tahun, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(harga_TextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_harga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -316,7 +316,7 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(jLabel7))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jaminanan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
@@ -349,11 +349,11 @@ public class Home extends javax.swing.JFrame {
             
             while (res.next()) {                
                 txt_idmobil.setText(res.getString("id_mobil"));
-                tipe_TextField2.setText(res.getString("tipe_mobil"));
-                merk_TextField3.setText(res.getString("merk_mobil"));
-                plat_TextField4.setText(res.getString("plat_nomor"));
-                tahun_TextField5.setText(res.getString("tahun_mobil"));
-                harga_TextField6.setText(res.getString("harga_sewa"));
+                txt_tipe.setText(res.getString("tipe_mobil"));
+                txt_merk.setText(res.getString("merk_mobil"));
+                txt_plat.setText(res.getString("plat_nomor"));
+                txt_tahun.setText(res.getString("tahun_mobil"));
+                txt_harga.setText(res.getString("harga_sewa"));
             }
             
             
@@ -366,25 +366,25 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_idmobilActionPerformed
 
-    private void tipe_TextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipe_TextField2ActionPerformed
+    private void txt_tipeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_tipeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tipe_TextField2ActionPerformed
+    }//GEN-LAST:event_txt_tipeActionPerformed
 
-    private void merk_TextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_merk_TextField3ActionPerformed
+    private void txt_merkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_merkActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_merk_TextField3ActionPerformed
+    }//GEN-LAST:event_txt_merkActionPerformed
 
-    private void plat_TextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plat_TextField4ActionPerformed
+    private void txt_platActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_platActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_plat_TextField4ActionPerformed
+    }//GEN-LAST:event_txt_platActionPerformed
 
-    private void tahun_TextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tahun_TextField5ActionPerformed
+    private void txt_tahunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_tahunActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tahun_TextField5ActionPerformed
+    }//GEN-LAST:event_txt_tahunActionPerformed
 
-    private void harga_TextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_harga_TextField6ActionPerformed
+    private void txt_hargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_hargaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_harga_TextField6ActionPerformed
+    }//GEN-LAST:event_txt_hargaActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         // TODO add your handling code here:
@@ -403,19 +403,19 @@ public class Home extends javax.swing.JFrame {
             while (res.next()) { 
                 
                 txt_idmobil.setText(res.getString("id_mobil"));
-                tipe_TextField2.setText(res.getString("tipe_mobil"));
-                merk_TextField3.setText(res.getString("merk_mobil"));
-                plat_TextField4.setText(res.getString("plat_nomor"));
-                tahun_TextField5.setText(res.getString("tahun_mobil"));
-                harga_TextField6.setText(res.getString("harga_sewa"));
+                txt_tipe.setText(res.getString("tipe_mobil"));
+                txt_merk.setText(res.getString("merk_mobil"));
+                txt_plat.setText(res.getString("plat_nomor"));
+                txt_tahun.setText(res.getString("tahun_mobil"));
+                txt_harga.setText(res.getString("harga_sewa"));
             }
-            transaksi trans = new transaksi(txt_idmobil.getText());
+            transaksi trans = new transaksi(txt_idmobil.getText(), txt_plat.getText(), txt_tipe.getText(),
+            txt_merk.getText(), txt_tahun.getText(), txt_harga.getText(), supir.toString(), jaminanan.getSelectedItem().toString());
             trans.setVisible(true);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, "Tidak Terhubung ke Database");
         }
-        transaksi trans = new transaksi(txt_idmobil.getText());
-            new transaksi().setVisible(true);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -444,6 +444,7 @@ public class Home extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -455,11 +456,9 @@ public class Home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable dataTable1;
-    private javax.swing.JTextField harga_TextField6;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -474,11 +473,13 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField merk_TextField3;
-    private javax.swing.JTextField plat_TextField4;
+    private javax.swing.JComboBox<String> jaminanan;
     private javax.swing.ButtonGroup supir;
-    private javax.swing.JTextField tahun_TextField5;
-    private javax.swing.JTextField tipe_TextField2;
+    private javax.swing.JTextField txt_harga;
     private javax.swing.JTextField txt_idmobil;
+    private javax.swing.JTextField txt_merk;
+    private javax.swing.JTextField txt_plat;
+    private javax.swing.JTextField txt_tahun;
+    private javax.swing.JTextField txt_tipe;
     // End of variables declaration//GEN-END:variables
 }

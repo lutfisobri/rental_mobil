@@ -5,15 +5,15 @@
  */
 package rental_mobil;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
-import koneksi.konekdb;
 /**
  *
  * @author Fathan
@@ -23,39 +23,64 @@ public class transaksi extends javax.swing.JFrame {
     /**
      * Creates new form transaksi
      */
-    public transaksi(String lbl_idmobilString) {
+    public transaksi(String lbl_idmobilString, String lbl_platnomorString, String lbl_tipeString, String lbl_merkString, 
+            String lbl_tahunString, String hargasewa, String lbl_sopirString, String lbl_jaminanString) {
         initComponents();
+        auto_notrans();
         
         lbl_idmobil.setText(lbl_idmobilString);
-        
-        
+        lbl_nopol.setText(lbl_platnomorString);
+        lbl_tipe.setText(lbl_tipeString);
+        lbl_merk.setText(lbl_merkString);
+        lbl_tahun.setText(lbl_tahunString);
+        lbl_harga.setText(hargasewa);
+        lbl_jaminan.setText(lbl_jaminanString);
     }
-//    public String userString() throws SQLException{
-//        try {
-//            setDataMahasiswa(usernameString);
-//        } catch (SQLException ex) {
-//            Logger.getLogger(transaksi.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//    }
 
     transaksi() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    private void setDataMahasiswa(String username) throws SQLException {
-        try {
-            String getAllData = "SELECT * FROM akun WHERE akun.username ='" + username + "'";
-            Connection conn = (Connection)konekdb.GetConnection();
-            PreparedStatement pst = conn.prepareStatement(getAllData);
-            ResultSet rs = pst.executeQuery(getAllData);
-            if (rs.next()) {
-                lbl_idpenyewa.setText(username);
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
+
+    transaksi(String text, String text0, String text1, String text2, String text3, String text4, String text5, String text6, String text7) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    public void auto_notrans(){
+        try {
+        Connection koneksi = DriverManager.getConnection("jdbc:mysql://sql6.freemysqlhosting.net:3306/sql6452648","sql6452648","B1fMNnfMCj");
+        Statement stat = koneksi.createStatement();
+        ResultSet rs = stat.executeQuery("SELECT * FROM customers ORDER BY id_customers DESC");
+        if (rs.next()) {
+            String kode = rs.getString("id_customers").substring(1);
+            String AN = ""+(Integer.parseInt(kode) + 1);
+            String nol = "";
+            
+            
+            if (AN.length()==1) 
+            {nol = "000";}
+            else if (AN.length()==2)
+            {nol = "00";}
+            else if (AN.length()==3)
+            {nol = "0";}
+            else if (AN.length()==4)
+            {nol = "";}
+            
+            no_trans.setText("D"+nol+AN);
+        } else {
+            no_trans.setText("D0001");
+        }
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, e);
+    }
+    }
+    
+
+   
+
+    
+
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -113,7 +138,7 @@ public class transaksi extends javax.swing.JFrame {
         lbl_supir = new javax.swing.JLabel();
         lbl_jaminan = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        no_trans = new javax.swing.JLabel();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jDateChooser2 = new com.toedter.calendar.JDateChooser();
         jLabel33 = new javax.swing.JLabel();
@@ -122,7 +147,6 @@ public class transaksi extends javax.swing.JFrame {
         jLabel36 = new javax.swing.JLabel();
         txt_totalhari = new javax.swing.JTextField();
         jLabel37 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -420,8 +444,8 @@ public class transaksi extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         jLabel1.setText("TRANSAKSI");
 
-        jLabel2.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        jLabel2.setText("no_trans");
+        no_trans.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        no_trans.setText("no_trans");
 
         jLabel33.setText("Tanggal Ambil");
 
@@ -432,19 +456,6 @@ public class transaksi extends javax.swing.JFrame {
         jLabel36.setText(":");
 
         jLabel37.setText("Hari");
-
-        jPanel4.setBackground(new java.awt.Color(0, 0, 0));
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 8, Short.MAX_VALUE)
-        );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -465,8 +476,8 @@ public class transaksi extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel34)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jDateChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addComponent(jLabel35)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -474,18 +485,18 @@ public class transaksi extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(txt_totalhari, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel37))
-                                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                                        .addComponent(jLabel37)))))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(67, 67, 67))
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(346, 346, 346)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jLabel2)))
+                        .addGap(346, 346, 346)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(370, 370, 370)
+                        .addComponent(no_trans)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -494,7 +505,7 @@ public class transaksi extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
+                .addComponent(no_trans)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -514,9 +525,7 @@ public class transaksi extends javax.swing.JFrame {
                     .addComponent(jLabel36)
                     .addComponent(txt_totalhari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel37))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap(110, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 650));
@@ -543,7 +552,6 @@ public class transaksi extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -572,7 +580,6 @@ public class transaksi extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel lbl_harga;
     private javax.swing.JLabel lbl_idmobil;
     private javax.swing.JLabel lbl_idpenyewa;
@@ -587,6 +594,7 @@ public class transaksi extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_tahun;
     private javax.swing.JLabel lbl_tanggallahir;
     private javax.swing.JLabel lbl_tipe;
+    private javax.swing.JLabel no_trans;
     private javax.swing.JTextField txt_totalhari;
     // End of variables declaration//GEN-END:variables
 }

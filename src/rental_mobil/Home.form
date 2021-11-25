@@ -80,18 +80,18 @@
                                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                                       <Component id="jButton2" min="-2" pref="73" max="-2" attributes="0"/>
                                       <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="merk_TextField3" alignment="0" min="-2" pref="199" max="-2" attributes="0"/>
-                                          <Component id="plat_TextField4" alignment="0" min="-2" pref="199" max="-2" attributes="0"/>
-                                          <Component id="tahun_TextField5" alignment="0" min="-2" pref="199" max="-2" attributes="0"/>
-                                          <Component id="tipe_TextField2" alignment="0" min="-2" pref="199" max="-2" attributes="0"/>
-                                          <Component id="jComboBox3" alignment="0" min="-2" pref="204" max="-2" attributes="0"/>
+                                          <Component id="txt_merk" alignment="0" min="-2" pref="199" max="-2" attributes="0"/>
+                                          <Component id="txt_plat" alignment="0" min="-2" pref="199" max="-2" attributes="0"/>
+                                          <Component id="txt_tahun" alignment="0" min="-2" pref="199" max="-2" attributes="0"/>
+                                          <Component id="txt_tipe" alignment="0" min="-2" pref="199" max="-2" attributes="0"/>
+                                          <Component id="jaminanan" alignment="0" min="-2" pref="204" max="-2" attributes="0"/>
                                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                               <Group type="102" alignment="1" attributes="0">
                                                   <Component id="jRadioButton1" min="-2" pref="93" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                                                   <Component id="jRadioButton2" min="-2" pref="93" max="-2" attributes="0"/>
                                               </Group>
-                                              <Component id="harga_TextField6" min="-2" pref="199" max="-2" attributes="0"/>
+                                              <Component id="txt_harga" min="-2" pref="199" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -132,27 +132,27 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="tipe_TextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_tipe" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="merk_TextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_merk" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="plat_TextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_plat" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="tahun_TextField5" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_tahun" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="harga_TextField6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_harga" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -163,7 +163,7 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jComboBox3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jaminanan" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -226,44 +226,44 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_idmobilActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="tipe_TextField2">
+        <Component class="javax.swing.JTextField" name="txt_tipe">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tipe_TextField2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_tipeActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="merk_TextField3">
+        <Component class="javax.swing.JTextField" name="txt_merk">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="merk_TextField3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_merkActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="plat_TextField4">
+        <Component class="javax.swing.JTextField" name="txt_plat">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="plat_TextField4ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_platActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="tahun_TextField5">
+        <Component class="javax.swing.JTextField" name="txt_tahun">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tahun_TextField5ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_tahunActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="harga_TextField6">
+        <Component class="javax.swing.JTextField" name="txt_harga">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="harga_TextField6ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_hargaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="jRadioButton1">
@@ -285,7 +285,7 @@
             <Property name="text" type="java.lang.String" value="Tidak"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox3">
+        <Component class="javax.swing.JComboBox" name="jaminanan">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="3">
