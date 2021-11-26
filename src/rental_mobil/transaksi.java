@@ -57,15 +57,17 @@ public class transaksi extends javax.swing.JFrame {
             
             
             if (AN.length()==1) 
-            {nol = "000";}
+            {nol = "0000";}
             else if (AN.length()==2)
-            {nol = "00";}
+            {nol = "000";}
             else if (AN.length()==3)
+            {nol = "00";}
+            else if (AN.length()==4)
             {nol = "0";}
             else if (AN.length()==4)
             {nol = "";}
             
-            no_trans.setText("D"+nol+AN);
+            no_trans.setText("TR"+nol+AN);
         } else {
             no_trans.setText("D0001");
         }
@@ -471,6 +473,8 @@ public class transaksi extends javax.swing.JFrame {
 
         jLabel36.setText(":");
 
+        txt_lama.setEnabled(false);
+
         jLabel37.setText("Hari");
 
         jLabel2.setText("Supir");
@@ -492,10 +496,15 @@ public class transaksi extends javax.swing.JFrame {
 
         txt_total.setBackground(new java.awt.Color(255, 51, 51));
         txt_total.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        txt_total.setForeground(new java.awt.Color(255, 0, 0));
+        txt_total.setForeground(new java.awt.Color(51, 51, 51));
         txt_total.setText("Total");
 
-        jButton1.setText("BAYAR");
+        jButton1.setText("LANJUT");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -621,6 +630,10 @@ public class transaksi extends javax.swing.JFrame {
         // TODO add your handling code here:
         hitungselisih();
     }//GEN-LAST:event_hitungActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
