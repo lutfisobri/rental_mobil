@@ -42,12 +42,11 @@ public class login extends javax.swing.JFrame {
         txt_username = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(827, 615));
 
-        btn_register.setBackground(new java.awt.Color(255, 255, 255));
         btn_register.setText("Register");
         btn_register.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,7 +54,6 @@ public class login extends javax.swing.JFrame {
             }
         });
 
-        btn_login.setBackground(new java.awt.Color(255, 255, 255));
         btn_login.setText("Login");
         btn_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,17 +160,17 @@ public class login extends javax.swing.JFrame {
                 if (txt_username.getText().equals(rs.getString("Username"))
                     && txt_password.getText().equals(rs.getString("Password"))) {
                     JOptionPane.showMessageDialog(null, "berhasil login ");
-                    this.setVisible(false);
-                    new Home().setVisible(true);
+                    
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "username atau password salah");
                 
             }
-
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
+        tampilanhome homepage = new tampilanhome(txt_username.getText());
+        homepage.setVisible(true);
     }//GEN-LAST:event_btn_loginActionPerformed
 
     /**
