@@ -4,17 +4,17 @@
  * and open the template in the editor.
  */
 package rental_mobil;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import javax.swing.JOptionPane;
-import javax.swing.JOptionPane;
+//import java.sql.Connection;
+//import java.sql.DriverManager;
+//import java.sql.ResultSet;
+//import java.sql.SQLException;
+//import java.sql.Statement;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
+//import java.text.SimpleDateFormat;
+//import java.util.Date;
+//import javax.swing.JOptionPane;
+//import javax.swing.JOptionPane;
 
 /**
  *
@@ -146,12 +146,14 @@ public class tampilanhome extends javax.swing.JFrame {
         
         dispose();
         
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        Home plHome= new Home();
-        plHome.setVisible(true);
+        // TODO add your handling code here  
+        this.setVisible(false);
+        new Home().setVisible(true);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -168,4 +170,8 @@ public class tampilanhome extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel username_tag;
     // End of variables declaration//GEN-END:variables
+
+    private void dispose(int EXIT_ON_CLOSE) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

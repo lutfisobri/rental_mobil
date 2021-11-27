@@ -160,7 +160,7 @@ public class login extends javax.swing.JFrame {
                 if (txt_username.getText().equals(rs.getString("Username"))
                     && txt_password.getText().equals(rs.getString("Password"))) {
                     JOptionPane.showMessageDialog(null, "berhasil login ");
-                    
+                    this.setVisible(false);
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "username atau password salah");
